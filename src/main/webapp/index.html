@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PDF 저작기</title>
+<style>
+* {
+  margin:0;
+}
+</style>
+</head>
+<body>
+<pre>
+<h2>PDF 저작기</h2>
+<strong>- 목표</strong>
+  1) OS와 DB에 종속적이지 않은 대량 PDF 저작기를 구축한다.
+  2) PDF 제작시 itext 나 jasper API를 모르고 개발할수 있어야 한다.
+
+<strong>- 남은 과제</strong>
+  1) 3단계용 HTML 작성 가이드를 만들고, 4단계용 Jaspersoft Studio Uer Guide를 번역한다.
+  2) 2단계용 GUI 저작기를 연계하여 누구나 쉽게 PDF 파일을 제작할수 있도록 한다. (저작기는 자바스크립트로 개발)
+  3) 독립 서버로 분리하고 MTS와 연계하여 대량 PDF 파일을 제작할수 있도록 한다.(경쟁사 약 200건/초 제작 가능)
+
+<strong>- 단계별 제작 방식</strong>
+  <font color="red">PDF 암호 : 1</font> <a href="/pdf/api/org/oh/pdf/web/TestController.html">소스보기</a>
+
+1 단계. 페이지별로 이미지, 도형, 필드변수 등을 입력하여 PDF파일을 만든 후 텍스트(개인화 정보)를 매핑하는 방식
+  1) 기본 뷰어(iBox 등)에서 한글이 깨지는 현상이 있음
+  2) Adobe Acrobat Pro 프로그램을 사용하여 PDF양식 파일 작성이 가능함
+  3) PDF 파일 용량이 크면 CPU 보다 IO(디스크) 사용률이 높으므로 쓰레드로 인한 IO 경합이 발생함
+  4) PDF 건수 : 1,000 건, PDF 용량 : 1 MB/건 => 평균 제작속도 : 17.3 건/초
+  예제 PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view1.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view1.pdf?down=true'" />
+
+2 단계. 페이지별로 이미지, 도형, 텍스트(개인화 정보) 등을 입력하여 PDF 파일을 만드는 방식
+  1) 이미지, 도형, 텍스트 등의 위치를 일일이 좌표로 지정해야 함 (추후 GUI저작기 제공 예정)
+  2) 복잡한 테이블이나 그래프 형태를 동적으로 제작하기 어려움 (하지만 2+3 단계로 제작 가능)
+  3) 이미지 파일 용량이 크면 CPU 보다 IO(디스크) 사용률이 높으므로 쓰레드로 인한 IO 경합이 발생함
+  4) PDF 건수 : 1,000 건, PDF 용량 : 1 MB/건 => 평균 제작속도 : 22.6 건/초
+  예제 PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view2.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view2.pdf?down=true'" />
+
+3 단계. 개인화 정보를 입력한 HTML 파일을 PDF로 변환하는 방식
+  1) HTML 작성시 스타일 제약조건이 있음 (추후 HTML 작성 가이드 제공 예정)
+  2) 매번 개인화된 HTML 파일을 파싱하므로 CPU 사용률이 높고 XML 비해 제작 속도가 떨어짐
+  3) PDF 건수 : 1,000 건, PDF 용량 : 71 KB/건(이미지 없음) => 평균 제작속도 : 23.2 건/초
+  예제 <a href="sample/layout_school1.html">HTML 소스</a> PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view3.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view3.pdf?down=true'" />
+<xmp>
+  <HTML 작성시 제약조건>
+  . 필수사항
+    1. XHTML 처럼 XML 문법에 맞게 작성
+      예1) <br> 또는 </br> 또는 <br></br> 을 <br/> 로 변경 => XML 문법을 따름
+      예2) <td background="image.jpg"></td> td 태그에서 background 속성 사용 불가 => XHTML 규약과 비슷
+    2. 인코딩은 반드시 utf-8 로 설정
+      예1) <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    3. style 태그안에 주석은 제거
+      예1) <style><!-- --></style> 을 <style></style> 로 변경
+    4. style과 link 태그안에서는 한글 사용 불가 (단, 대소문자는 구분 안함)
+      : 굴림(Gulim), 굴림체(GulimChe), 돋움(Dotum), 돋움체(DotumChe), 바탕(Batang), 바탕체(BatangChe), 궁서(Gungsuh), 궁서체(GungsuhChe)
+      예1) font-family: 굴림; 을 font-family: Gulim; 로 변경
+    5. 적용되지 않는 인라인 스타일 속성이 있음
+      예1) border-*, padding-* 등
+  . 권장사항
+    1. 고객사에서 제작한 HTML을 참고하여 XML 문법에 맞게 새로 작성할것을 권장 (교정 어려움)
+    2. HTML의 크기는 가로 595, 세로 842 픽셀의 A4 사이즈를 권장
+    3. PDF 미리보기를 통해 수시로 HTML 문서의 스타일을 확인</xmp>
+<form action="/pdf/pdf/view31.pdf" method="post" enctype="multipart/form-data">
+  2) HTML파일 입력 : <input type="file" name="file" /> <input type="submit" value="미리보기" onclick="javascript:document.querySelector('#down').value = 'false';" /> <input type="submit" value="다운로드" onclick="javascript:document.querySelector('#down').value = 'true';" />
+  <input type="hidden" id="down" name="down" />
+</form>
+  3) 관련 링크
+    <a href="http://demo.itextsupport.com/xmlworker">HTML 편집기</a>(외부폰트 사용불가)
+    <a href="http://validator.kldp.org">XHTML 유효성 체크</a>
+    <a href="http://ko.wikipedia.org/wiki/XHTML">XHTML 특징</a>
+
+  4) 샘플 HTML
+    스타일 예제 : <a href="sample/various_styles.html">HTML</a> <a href="sample/various_styles.pdf">PDF</a>
+    테이블 예제 : <a href="sample/some_tables.html">HTML</a> <a href="sample/some_tables.pdf">PDF</a>
+    책갈피 예제 : <a href="sample/walden2.html">HTML</a> <a href="sample/walden2.pdf">PDF</a>
+
+4 단계. XML(디자인) 파일에 개인화 정보를 입력하여 PDF로 변환하는 방식
+  1) XML GUI 저작기를 익혀야 하는 시간이 필요함
+  2) HTML과 같은 스타일 제약조건이 없음
+  3) 최초의 한번만 XML을 파싱하여 PDF 객체를 생성한 후 개인화 정보를 매핑하므로 제작 속도가 월등히 빠름
+  4) PDF 건수 : 1,000 건, PDF 용량 : 75 KB/건(이미지 없음) => 평균 제작속도 : 106.2 건/초
+  예제 <a href="sample/Blank_A4.jrxml">XML 소스</a> <a href="sample/Blank_A4_DB.jrxml">XML 소스(쿼리 포함)</a> PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view4.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view4.pdf?down=true'" />
+
+1+2 단계. 먼저 배경이 되는 PDF 파일을 바닥에 깔고 그 위에 이미지, 도형, 텍스트(개인화 정보) 등을 입히는 방식
+  1) 1단계 제작 방식의 문제점인 한글 깨짐 현상을 방지할수 있음
+  예제 PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view12.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view12.pdf?down=true'" />
+
+2+3 단계. 먼저 이미지, 도형, 텍스트 등을 입력한 후 그 위에 HTML 파일(복잡한 그리드, 그래프)을 입히는 방식
+  1) 2단계 제작 방식으로는 어려운 그리드, 그래프 등의 복잡한 UI를 HTML로 작성할수 있음
+  예제 PDF <input type="submit" value="미리보기" onclick="location='/pdf/pdf/view23.pdf'" /> <input type="submit" value="다운로드" onclick="location='/pdf/pdf/view23.pdf?down=true'" />
+
+<strong>- 문서</strong>
+  1) <a href="/pdf/api/index.html">PDF 제작 API</a>
+  2) <a href="/pdf/api/org/oh/pdf/PdfUtils.html">샘플 코드</a>
+
+<strong>- 링크</strong>
+  1) <a href="http://itextpdf.com/api">itextpdf api</a>
+  2) <a href="http://itextpdf.com/examples">itextpdf examples</a>
+  3) <a href="http://tutorials.jenkov.com/java-itext">itextpdf tutorials</a>
+  4) <a href="http://jasperreports.sourceforge.net/api">jasperreports api</a>
+  5) <a href="http://community.jaspersoft.com/wiki/jasperreports-library-samples">jasperreports sample</a>
+  6) <a href="http://community.jaspersoft.com/wiki/jasperreports-library-tutorial">jasperreports tutorials</a>
+  7) <a href="http://community.jaspersoft.com/documentation/tibco-jaspersoft-studio-user-guide/v60/getting-started-jaspersoft-studio">Jaspersoft Studio Uer Guide</a>
+
+<strong>- 다운로드</strong>
+  1) 라이브러리 : <a href="/pdf/pdf/download/pdf-0.0.1.jar">pdf-0.0.1.jar</a>, 참조 라이브러리 : <a href="/pdf/pdf/download/lib.zip">lib.zip</a>
+  2) 실행 파일 : <a href="/pdf/pdf/download/pdf-0.0.1.war">pdf-0.0.1.war</a> - 실행방법(톰캣내장) : java -jar pdf-0.0.1.war
+  3) JasperStudio 설치 : <a href="/pdf/pdf/download/TIBCOJaspersoftStudio-6.0.3.final-windows-installer-x86_64.exe">TIBCOJaspersoftStudio-6.0.3.final-windows-installer-x86_64.exe</a>
+
+<strong>- Git</strong>
+  <a href="https://github.com/skoh/common/tree/master/pdf">https://github.com/skoh/common/tree/master/pdf</a>
+</pre>
+</body>
+</html>

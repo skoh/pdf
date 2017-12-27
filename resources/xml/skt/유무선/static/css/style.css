@@ -1,0 +1,1096 @@
+@charset "utf-8";
+
+/* ---------------------------------------- default ----------------------------------------------- */
+body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form, table, th, td{margin:0;_margin:0;padding:0}
+ul,ol,dl {list-style:none}
+img {border:0; vertical-align:middle}
+ul {list-style:none; padding:0; margin:0;_margin:0;}
+table {border-collapse:collapse;width:100%;}
+a {text-decoration:none;cursor:pointer;outline:none;}
+a:hover,a:visited,a:link{text-decoration:none;}
+
+/* pdf 변환 기본 옵션 */
+#wrap{width:765px;margin:0 auto;}
+h1,h2,h3,h4,h5,h6{display:none;}
+
+/* 기본 font 설정 */
+body{width:700px;margin:0 auto;}
+body,div,p,table,td,th,span,a{font-family:'-윤고딕320','Dotum';font-size:11px;color:#4e4e4e;}
+th,th div{font-family:'-윤고딕340';font-size:12px;}
+/* -------------------------------------- 내용  ------------------------------------------ */
+.fS12{
+	font-size:12px;
+}
+.mT3{
+	margin-top:3px;
+}
+.mT5{
+	margin-top:5px;
+}
+.mT10{
+	margin-top:10px;
+}
+.mL20{
+	margin-left:20px;
+}
+.mL30{
+	margin-left:30px;
+}
+.mL40{
+	margin-left:40px;
+}
+.mL48{
+	margin-left:48px;
+}
+.mL50{
+	margin-left:50px;
+}
+.mb12{
+	margin-bottom:12px;
+}
+/*블릿*/
+.symbol{
+	font-family:'Dotum';
+	font-size:11px;
+	line-height:100%;
+	color:#4e4e4e;
+}
+/* 로고 */
+.logo{
+	margin-bottom:25px;
+}
+.skMember{
+	width:698px;
+	overflow:hidden;
+	padding-bottom:10px;
+}
+.skMember .date{
+	width:50%;
+	float:left;
+	color: #ea002c;
+	font-size:18px;
+	font-weight:bold;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.skMember .date .type{
+	width:50%;
+	color: #ea002c;
+	font-size:15px;
+	font-weight:normal;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.skMember .name{
+	width:50%;
+	float:right;
+	text-align: right;
+	font-size:18px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.skMember .name .tel{
+	margin-right:5px;
+	color: #4e4e4e;
+	font-size:18px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.skMember .text01{
+	color: #424242;
+	font-size: 15px;
+	font-weight:bold;
+}
+/* h3 */
+.h3{
+	margin-bottom:4px;
+	overflow:hidden;
+}
+.h3 p{
+	margin-bottom:4px;
+	font-size:18px;
+	color:#ea002c;
+	font-family:'뫼비우스 Regular','뫼비우스'
+} 
+.h3 .taL{
+	float:left;
+	width:49%;
+}
+.h3 .taR{
+	float:right;
+	width:49%;
+	text-align:right;
+}
+.h3 .taR{
+	padding-top:12px;
+	line-height:100%;
+}
+.h3 .taR img{
+	vertical-align:top;
+}
+.h3 .fwB{
+	font-family:'-윤고딕340';
+}
+.h3 .taR .fwB{
+	font-family:'-윤고딕340';
+}
+.h3.style02{
+	padding-bottom:6px;
+	margin-bottom:25px;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.h3.style03{
+	padding-bottom:4px;
+	margin-bottom:25px;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.h3.style04{
+	padding-bottom:2px;
+	margin-bottom:12px;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.h3 .fS13{
+	font-size:13px;
+}
+.h3.style05{
+	padding-bottom:2px;
+	margin-bottom:50px;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.h3 .fL{
+	float:left;
+	width:49%;
+}
+.h3 .fR{
+	float:right;
+	width:50%;
+}
+.h3 .mL5{
+	margin-left:5px;
+}
+/* table */
+/* 세로 테이블 */
+/* 기본정보 납부정보 */
+.tableRow{
+	margin-bottom:22px;
+	border-top:1.1pt solid #dfe0e1;
+}
+.tableRow table{
+	border-bottom:1.1pt solid #dfe0e1
+}
+.tableRow thead th{
+	padding:5px 10px 4px 10px;
+	line-height:130%;
+	border-bottom:0.77pt solid #dfe0e1;
+	background:#faf9f9;
+}
+.tableRow th{
+	padding:5px 10px 4px 10px;
+	line-height:130%;
+	border-bottom:0.77pt solid #dfe0e1;
+	background:#faf9f9;
+}
+.tableRow tbody td{
+	vertical-align:top;
+	padding:6px 10px 0 10px;
+	border-left:0.77pt solid #dfe0e1;
+}
+.tableRow tbody td.mR8{
+	vertical-align:top;
+	padding:6px 8px 0 9px;
+	border-left:0.77pt solid #dfe0e1;
+}
+.tableRow td{
+	vertical-align:top;
+	padding:6px 10px 0 10px;
+	border-left:0.77pt solid #dfe0e1;
+}
+.tableRow thead th.first,
+.tableRow tbody td.first{
+	border-left:0;
+}
+.tableRow thead .taL,
+.tableRow thead .taR{
+	width:49%;
+	display:block;
+}
+.tableRow thead .taL{
+	float:left;
+	text-align:left;
+}
+.tableRow thead .taR{
+	text-align:right;
+	float:right;
+	font-family: "-윤고딕320","Dotum";
+	font-size:11px;
+	color:#4e4e4e;
+}
+.tableRow tbody .taL,
+.tableRow tbody .taR{
+	display:block;
+	padding-bottom:6px;
+}
+.tableRow tbody .taL{
+	width:27%;
+	float:left;
+}
+.tableRow tbody .taR{
+	width:73%;
+	text-align:right;
+	float:right;
+}
+.tableRow tbody .taL.size02{
+	width:14%;
+}
+.tableRow tbody .taR.size02{
+	width:85%;
+}
+.tableRow tbody .taL.size03{
+	width:50%;
+}
+.tableRow tbody .taR.size03{
+	width:50%;
+}
+.tableRow tbody .fwB{
+	font-family:'-윤고딕340';
+}
+/* table05 */
+/* 이용 상세 내역 */
+.tableRow05{
+	margin-bottom:22px;
+	border-top:1.1pt solid #dfe0e1;
+}
+.tableRow05 table{
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.tableRow05 tbody td{
+	vertical-align:top;
+	padding:4px 24px 19px 24px;
+}
+.tableRow05 tbody td.first{
+	border-right: 0.77pt solid #dfe0e1;
+}
+.tableRow05 tbody .taL,
+.tableRow05 tbody .taR{
+	width:50%;
+	display:block;
+	padding-bottom:6px;
+}
+.tableRow05 tbody .taL{
+	float:left;
+	text-align:left;
+}
+.tableRow05 tbody .taR{
+	text-align:right;
+	float:right;
+}
+.tableRow05 tbody .tdListTitle{
+	overflow:hidden;
+	text-indent: -1px;
+	text-align: left;
+	margin-bottom:8px;
+	padding:5px 0 5px;
+	border-bottom: 0.77pt solid #dfe0e1;
+}
+.tableRow05 tbody .tdListTitle div{
+	padding-bottom:0;
+	font-size: 15px;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListTitle02{
+	margin-bottom:6px;
+}
+.tableRow05 tbody .tdListTitle03{
+	padding-top:20px;
+	padding-bottom:6px;
+	font-size:15px;
+	color:#f00;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .bBL{
+	margin-bottom:8px;
+	border-bottom:0.77pt solid #dfe0e1;
+}
+.tableRow05 tbody .tdListDepth01{
+	overflow:hidden;
+}
+.tableRow05 tbody .tdListDepth01 div{
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListTitle02{
+	text-align:left;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListDepth02{
+	overflow:hidden;
+	padding-left:10px;
+	margin-bottom:6px;
+}
+.tableRow05 tbody .tdListDepth02 div{
+	font-family:'-윤고딕320';
+}
+.tableRow05 tbody .tdListLast{
+	overflow:hidden;
+	padding-top:20px;
+	margin-bottom:10px;
+	border-bottom:0.77pt solid #dfe0e1;
+	font-size:12px;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListLast div{
+	font-size:12px;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListLast02{
+	overflow:hidden;
+	margin-bottom:2px;
+	border-bottom:0.77pt solid #dfe0e1;
+	font-size:15px;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListLast02 div{
+	font-size:15px;
+	font-family:'-윤고딕340';
+}
+.tableRow05 tbody .tdListLast02.size02{
+	padding-top:2px;
+}
+.tableRow05 tbody .tdListLast02.size03{
+	padding-top:10px;
+}
+.tableRow05 tbody .tdListLast02.size02 .taL{
+	width:65%;
+}
+.tableRow05 tbody .tdListLast02.size02 .taR{
+	width:34%;
+}
+.tdListLastB{
+	overflow:hidden;
+	border-bottom:0.77pt solid #dfe0e1;
+}
+.tableRow05 tbody .mBN{
+	margin-bottom:0;
+}
+.tableRow05 tbody .pBN{
+	padding-bottom:0;
+}
+.tableRow05 tbody .pT5{
+	padding-top:5px;
+}
+
+/* tableRow08 */
+.tableRow08{
+	margin-bottom:22px;
+	border-top:1.1pt solid #dfe0e1;
+}
+.tableRow08 table{
+	border-bottom:1.1pt solid #dfe0e1
+}
+.tableRow08 thead th{
+	padding: 5px 0px 4px 0px;
+	line-height:130%;
+	background:#faf9f9;
+	vertical-align: middle;
+	border-left:0.77pt solid #dfe0e1;
+	border-bottom:0.77pt solid #dfe0e1;
+}
+.tableRow08 tbody th{
+	padding:5px 0 4px 10px;
+	text-align:left;
+	border-bottom:0.77pt solid #dfe0e1;
+}
+.tableRow08 tbody .thead th{
+	padding: 5px 0px 4px 0px;
+	line-height:130%;
+	background:#faf9f9;
+	vertical-align: middle;
+	border-left:0.77pt solid #dfe0e1;
+	border-bottom:0.77pt solid #dfe0e1;
+	text-align:center;
+}
+.tableRow08 .pdT0{
+	padding-top:0px;
+}
+.tableRow08 tbody td.mgT8{
+	padding-top:8px;
+}
+.tableRow08 tbody td.mgT3{
+	padding-top:3px;
+}
+.tableRow08 .mB10{
+	margin-bottom:10px;
+}
+.tableRow08 tbody td{
+	padding:5px 0 6px 0;
+	border-left:0.77pt solid #dfe0e1;
+	border-bottom:0.77pt solid #dfe0e1;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.tableRow08.type02 thead th{	
+	padding:5px 0 7px 0;
+}
+.tableRow08.type02 tbody td{
+	padding:5px 0 7px 0;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.tableRow08 thead th.first,
+.tableRow08 tbody th.first,
+.tableRow08 tbody td.first,
+.tableRow08 tbody .bLN td{
+	border-left:0;
+}
+.tableRow08 tbody .tfootTd td{
+	border-bottom:1.1pt solid #dfe0e1;
+	font-family:'-윤고딕340';
+}
+.tableRow08 tfoot td.bL1{
+	border-left:0.77pt solid #dfe0e1;
+}
+.tableRow08 tfoot td{
+	padding:5px 0 5px 0;
+	border-top:0.77pt solid #dfe0e1;
+	font-family:'-윤고딕340';
+}
+.tableRow08 tfoot .bTN td{
+	border-top:0;
+}
+.tableRow08 tbody .thead th.BCB,
+.tableRow08 th.BCB{
+	background: #ebeaea;
+}
+.tableRow08 tbody .fwB{
+	font-family:'-윤고딕340';
+}
+.tableRow08 .fontTY320{
+	font-family:'-윤고딕320';
+}
+.tableRow08 .bot{
+	border-bottom:0;
+}
+.tableRow08 .taR{
+	padding-right:10px;
+	text-align:right;
+}
+.tableRow08 .taR01{
+	padding-right:2px;
+	text-align:right;
+}
+.tableRow08 .taR05{
+	padding-right:5px;
+	text-align:right;
+}
+.tableRow08 .taL{
+	padding-left:10px;
+	text-align:left;
+}
+.tableRow08 .taL01{
+	padding-left:2px;
+	text-align:left;
+}
+.tableRow08 .taL02{
+	padding-left:19px;
+	text-align:left;
+}
+.tableRow08 .taL03{
+	padding-left:20px;
+	text-align:left;
+}
+.tableRow08 .taL05{
+	padding-left:5px;
+	text-align:left;
+}
+.tableRow08 .taC{
+	text-align:center;
+}
+.tableRow08 .pLR2{
+	padding:0 2px;
+}
+
+/*문의,접수박스*/
+/* 자동납부신청 자주찾는 문의 이메일 접수 */
+.tableRow08 td.vaT{
+	vertical-align:top;
+}
+.tableRow08 td .internetBox{
+	padding:10px 20px 20px 20px;
+}
+.tableRow08 td .CDBox{
+	padding:10px 20px 10px 20px;
+}
+.payBoxdiv{
+	margin-bottom:20px;
+	overflow:hidden;
+}
+.payBoxdiv p{
+	line-height:160%;
+}
+.payBoxIn{
+	width:240px;
+	float:left;
+}
+.payBoxIn01{
+	width:220px;
+	float:left;
+}
+.payBoxIn02{
+	width:360px;
+	float:left;
+}
+.payBoxIn03{
+	width:340px;
+	float:left;
+}
+.payBox{
+	width:220px;
+	border:0.77pt solid #dfe0e1;
+	background-color:#faf9f9;
+	padding:17px 20px 23px 20px;
+}
+.payBox01{
+	width:340px;
+	border:0.77pt solid #dfe0e1;
+	background-color:#faf9f9;
+	padding:17px 20px 23px 20px;
+}
+.payCon {
+	overflow:hidden;
+}
+.payCon div {
+	float:left;
+}
+.payImg{
+	padding-right:7px;
+}
+.textTL{
+	float:left;
+}
+.textTR{
+	float:right;
+	margin-top:24px;
+	color: #ff6f00;
+	font-size:26px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.textTR a{
+	float:right;
+	margin-top:24px;
+	color: #ff6f00;
+	font-size:26px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.textTR01{
+	float:right;
+	margin-top:15px;
+	color: #ff6f00;
+	font-size:26px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.textTR01 a{
+	float:right;
+	margin-top:15px;
+	color: #ff6f00;
+	font-size:26px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.textT04{
+	margin:2px 0 10px 0;
+	color: #ff6f00;
+	font-size:17px;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.tableRow08 .textT01{
+	margin-bottom:8px;
+	color: #ff6f00;
+	font-size:16px;
+	font-weight:bold;
+	font-family:'뫼비우스 Regular','뫼비우스'
+	padding-bottom:10px;
+}
+.tableRow08 .textT02 a{
+	color: #ff6f00;
+	text-decoration:underline;
+	font-size:11px;
+	font-weight:bold;
+	font-family:'뫼비우스 Regular','뫼비우스'
+}
+.tableRow08 .textT03{
+	line-height:160%;
+}
+
+/* tableRow09 */
+/* 요금 기본내역 */
+.tableRow09{
+	margin-bottom:22px;
+	border-top:1.1pt solid #dfe0e1;
+}
+.tableRow09 table{
+	border-bottom:1.1pt solid #dfe0e1
+}
+.tableRow09 thead th{
+	padding:8px 0;
+	line-height:120%;
+	border-bottom:0.77pt solid #f28a39;
+	border-left:1.1pt solid #dfe0e1;
+	font-size:14px;
+	background:#fef8ec;
+}
+.tableRow09 tbody td{
+	vertical-align:top;
+	padding:10px 0px 4px 0px;
+	border-left:1.1pt solid #dfe0e1;
+}
+.tableRow09 thead th.first,
+.tableRow09 tbody td.first,
+.tableRow09 tfoot td.first,
+.tableRow09 thead th.bLN,
+.tableRow09 tbody td.bLN,
+.tableRow09 tfoot td.bLN{
+	border-left:0;
+}
+.tableRow09 tbody .taL,
+.tableRow09 tbody .taR{
+	padding-bottom:6px;
+	font-size:12px;
+}
+.tableRow09 tbody .taL{
+	text-align:left;
+	font-family:'-윤고딕340';
+	padding-left:43px;
+
+}
+.tableRow09 .taR{
+	text-align:right;
+	padding-right:43px;
+}
+.tableRow09 tfoot td{
+	padding:2px 0px 1px 0px;
+	font-size:13px;
+	border-top:0.77pt solid #dfe0e1;
+	border-left:1.1pt solid #dfe0e1;
+}
+.tableRow09 tfoot .taL,
+.tableRow09 tfoot .taR{
+	padding:4px 0;
+}
+.tableRow09 tfoot .taC{
+	text-align:center;
+}
+.tableRow09 tfoot .taR{
+	text-align:right;
+	padding-right:43px;
+}
+.tableRow09 thead .point{
+	color:#ea002c;
+}
+.tableRow09 tfoot .fwB{
+	font-family:'-윤고딕340';
+	font-size:15px;
+}
+
+/* 가로 테이블 tableCol */
+/* 내게 맞는 이동전화 요금제 찾기 입금전용 계좌 SK텔레콤 세금계산서 멤버십 할인한도 , 레인보우 포인트 B tv B 포인트 포인트 내역*/
+.tableCol{
+	margin-bottom:22px;
+	border-top:1.1pt solid #dfe0e1;
+}
+.tableCol .taC{
+	text-align:center;
+}
+.tableCol table{
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.tableCol tbody th,
+.tableCol tbody td{
+	padding: 5px 0px 6px 10px;
+	text-align: left;
+	border-bottom: 0.77pt solid #dfe0e1;
+	border-left: 0.77pt solid #dfe0e1;
+}
+.tableCol .p5{
+		padding:5px 0 6px 5px;
+}
+.tableCol .p8{
+		padding:5px 0 6px 8px;
+}
+.tableCol .p10{
+	padding:9px 0 10px 10px;
+}
+.tableCol .p0{
+	padding:5px 0px 6px 0px;
+	padding-right:0px;
+}
+.tableCol td.taR{
+	text-align:right;
+	padding-right:10px;
+}
+.tableCol tbody th.first,
+.tableCol tbody td.first{
+	border-left:0;
+}
+.tableCol tbody th.last,
+.tableCol tbody td.last{
+	border-bottom:0;
+}
+.tableCol tbody th{
+	background: #faf9f9;
+}
+.tableCol .fontT{
+	font-family:'-윤고딕320';
+	font-size:12px;
+	color:#4e4e4e;
+}
+.tableCol tbody td .text01{
+	color:#f68026;
+}
+.tableCol .case02{
+	margin-top:8px;
+	border-top:1.1pt solid #dfe0e1;
+}
+/* 가로 테이블 tableCol02 */
+/* 지난달 영수증 */
+.tableCol02 tbody th{
+	padding: 6px 0 6px;
+	text-align: left;
+	line-height: 120%;
+	/*letter-spacing: -1px;*/
+	border-bottom: 0.77pt solid #e2e2e2;
+}
+.tableCol02 tbody td{
+	padding: 6px 0 6px;
+	line-height: 120%;
+	border-bottom: 0.77pt solid #e2e2e2;
+}
+/* 테이블 부품 */
+/* 테이블 하단 문구 */
+.tableComment{
+	overflow:hidden;
+	line-height:160%;
+	font-size:10px;
+}
+.tableComment a ,
+.tableComment div, 
+.tableComment span,
+.tableComment p{
+	font-size:10px;
+}
+.tableComment.fS11 div,
+.tableComment.fS11 p{
+	font-size:11px;
+}
+.tableComment div.taL{
+	float:left;
+	width:50%;
+}
+.tableComment div.taR{
+	float:right;
+	width:50%;
+	text-align:right;
+}
+.tableComment .taLS01{
+	float:left;
+	width:64%;
+}
+.tableComment .taRS01{
+	float:right;
+	width:36%;
+}
+.tableComment .taLL{
+	float:left;
+	text-align:left;
+	width:100%;
+}
+.tableComment .taRT{
+	float:right;
+	width:50%;
+	text-align:right;
+}
+.tableComment .mL7{
+	margin-left:11px;
+}
+.tableComment .pL25{
+	padding-left:25px;
+}
+.tableComment .pdT3{
+	padding-top:3px;
+}
+.tableComment.mB22{
+	margin-bottom:22px;
+}
+.tableComment .text01{
+	color:#ea002c;
+}
+.tableComment.type02{
+	padding-top:6px;
+	line-height:180%;
+	color:#000;
+}
+.tableComment.imgIn{
+	border-bottom:0.77pt solid #dfe0e1;
+}
+/* div 박스 */
+/* 고객님을 위한 맞춤 안내 */
+.divBox01{
+	padding:20px 45px 1px 45px;
+	margin-bottom:22px;
+	border-top:0.77pt solid #dfe0e1;
+	border-bottom:0.77pt solid #dfe0e1;
+	border-right:0.77pt solid #dfe0e1;
+	border-left:0.77pt solid #dfe0e1;
+}
+.divBox01.pB20{
+	padding-bottom:20px;
+}
+.divBox01 .caseTitle{
+	margin-bottom:2px;
+	line-height:150%;
+	font-family:'-윤고딕340';
+	font-size:12px;
+}
+.divBox01 .caseTitle01{
+	margin-bottom:10px;
+	line-height:150%;
+	font-family:'-윤고딕340';
+	font-size:12px;
+}
+.divBox01 .caseText{
+	padding:0 0 20px 0px;
+	line-height:150%;
+}
+.divBox01 .caseText .fS12{
+	font-size:12px;
+}
+.divBox01 .caseTitleBox{
+	overflow:hidden;
+	margin-bottom:2px;
+}
+.divBox01 .caseTitleBox div{
+	width:49%;
+	line-height:150%;
+}
+.divBox01 .caseTitleBox .taL{
+	float:left;
+	font-family:'-윤고딕340';
+}
+.divBox01 .caseTitleBox .taR{
+	margin-top:2px;
+	float:right;
+	text-align:right;
+	font-size:11px;
+}
+.divBox01 .caseTitleBox01{
+	overflow:hidden;
+	margin-bottom:10px;
+}
+.divBox01 .caseTitleBox01 div{
+	width:49%;
+	line-height:150%;
+}
+.divBox01 .caseTitleBox01 .taL{
+	float:left;
+	font-family:'-윤고딕340';
+}
+.divBox01 .caseTitleBox01 .taR{
+	margin-top:2px;
+	float:right;
+	text-align:right;
+	font-size:11px;
+}
+
+/* div 박스 02 */
+/* 지난달 영수증 */
+.divBox02{
+	overflow:hidden;
+	padding-top:3px;
+	margin-bottom:27px;
+	border-top:1.1pt solid #dfe0e1;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.divBox02 .fL{
+	width:40%;
+	padding-left:10px;
+	float:left;
+}
+.divBox02 .fR{
+	width:54%;
+	padding-right:10px;
+	float:right;
+}
+.divBox02 .h4{
+	padding:8px 0 3px 0;
+	font-family:'-윤고딕340';
+}
+.divBox02 .pdS01{
+	padding:3px 0 7px 0;
+}
+.divBox02 .pdS02{
+	padding:8px 0 11px 0;
+}
+/* div 박스 03 */
+.divBox03{
+	overflow:hidden;
+}
+.divBox03 .fL{
+	width:47%;
+	float:left;
+}
+.divBox03 .fR{
+	width:47%;
+	float:right;
+}
+.divBox03 .fR02{
+	padding-top:47px;
+	width:49%;
+	float:right;
+}
+/* text 박스 */
+/* 이번 달 납부 금액 정보 */
+.textBox01{
+	margin-bottom:22px;
+}
+.textBox01 .textBoxIn{
+	overflow:hidden;
+	padding:15px 29px 16px 29px;
+	border:1.5pt solid #ea002c;
+}
+.textBox01 .textBoxIn div{
+	color:#4e4e4e;
+	font-size:21px;
+	line-height:100%;
+	font-family:'뫼비우스 Regular','뫼비우스';
+}
+.textBox01 .textBoxIn div.taL{
+	float:left;
+	width:60%;
+}
+.textBox01 .textBoxIn div.taR{
+	float:right;
+	text-align:right;
+}
+.textBox01 .textBoxIn .textBoxtaR{
+	float:right;
+	text-align:right;
+	margin-right:10px;
+}
+.textBox01 .textBoxIn div span{
+	color:#ea002c;
+	font-size:23px;
+	font-weight:bold;
+	/*vertical-align:bottom;*/
+	font-family:'뫼비우스 Regular','뫼비우스';
+}
+.textBox01 .tableComment{
+	font-family:'뫼비우스 Regular','뫼비우스';
+	font-size:12px;
+}
+.textBox01 .fontT02{
+	font-family:'-윤고딕320';
+	font-size:12px;	
+}
+.textBox01 .textBoxIn .taL .Boxdate{
+	font-family:'뫼비우스 Regular','뫼비우스';
+	font-weight:bold;
+	font-size:21px;
+	color:#4e4e4e;
+}
+.textBox01 .taR{
+	text-align:right;
+}
+/* graph 박스 */
+/* 최근 4개월 금액 */
+.graphBox01{
+	margin-bottom:22px;
+	overflow:hidden;
+}
+.graphBox01 .graphTitle{
+	line-height:110%;
+	margin-top:-10px;
+}
+.graphBox01 .graphTitle img{
+	width:10px;
+	height:12px;
+	vertical-align:baseline;
+}
+.graphBox01 .graphTitle span{
+	margin-left:5px;
+	font-family:'-윤고딕340';
+}
+.graphBox01 .fL{
+	float:left;
+	width:47%;
+}
+.graphBox01 .fR{
+	float:right;
+	width:47%;
+}
+.graphBox01 .graphCon{
+	overflow:hidden;
+}
+.graphBox01 .graphCon .graphItem{
+	width:25%;
+	float:left;
+	height:98px;
+	overflow:hidden;
+	text-align:center;
+}
+.graphBox01 .graphCon .graphItem p{
+	margin-bottom:6px;
+}
+.graphBox01 .graphBot{
+	overflow:hidden;
+	border-top:0.77pt solid #dfe0e1;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.graphBox01 .graphBot div{
+	width:25%;
+	padding:2px 0 5px 0;
+	float:left;
+}
+.graphBox01 .graphBot p{
+	text-align:center;
+}
+.graphBox01 .graph01{
+	border-top:1.1pt solid #dfe0e1;
+	padding-top:17px;
+	margin-bottom:20px;
+}
+.graphBox01 .graphTextBox{
+	padding:7px 0 8px 0;
+	line-height:130%;
+	border-top:1.1pt solid #dfe0e1;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.graphBox01 .graphTextBox01{
+	padding:7px 0 8px 0;
+	line-height:160%;
+	border-top:1.1pt solid #dfe0e1;
+	border-bottom:1.1pt solid #dfe0e1;
+}
+.graphBox01 .graph02{
+	padding-top:6px;
+	margin-bottom:20px;
+}
+
+/*공통 하단*/
+.footer{
+	width:700px;
+	margin-top:30px;
+	padding-top:15px;
+	border-top:0.77pt solid #dfe0e1;
+}
+.footer .footerL{
+	float:left;
+	padding-top:8px;
+}
+.footer .footerR{
+	float:right;
+	padding:0 137px 0 0;
+}
+.footer .footerR p{
+	font-family:'-윤고딕320';
+	font-size:10px;
+	line-height:160%;
+	color:#4e4e4e;
+}
+.footer .footerR span{
+	font-family:'-윤고딕340';
+	font-size:10px;
+	color:#333333;
+}

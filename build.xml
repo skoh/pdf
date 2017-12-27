@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="pdf" default="deploy" basedir=".">
+	<description>
+		Auto pdf build tools
+	</description>
+
+	<property file="build.properties" />
+	<property name="build.dir" value="target/build" />
+	<property name="ver" value="0.0.1" />
+	<property name="java.src" value="src/main/java" />
+	<property name="java.classes" value="${build.dir}/classes" />
+	<property name="dist" value="target" />
+	<property name="deploy1" value="../../workspace_montessori/montessori_moffice/src/main/webapp/WEB-INF/lib" />
+
+	<echo message="Creating the common working directories" />
+
+	<path id="build.classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="target/pdf-0.0.1/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean" description="clean">
+		<echo message="Clean the last build files" />
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="compile" depends="clean" description="Compile java application">
+		<echo message="Compiling the java module" />
+		<mkdir dir="${java.classes}" />
+		<javac srcdir="${java.src}" destdir="${java.classes}" includeantruntime="false" verbose="on">
+			<classpath refid="build.classpath" />
+		</javac>
+	</target>
+
+	<target name="package" depends="compile">
+		<echo message="Building the JAR file in one step" />
+		<copy todir="${java.classes}">
+			<fileset dir="${java.src}" includes="*.properties" />
+		</copy>
+		<jar destfile="${dist}/${ant.project.name}-${ver}.jar" duplicate="preserve" compress="false">
+			<fileset dir="${java.classes}" />
+		</jar>
+	</target>
+
+	<target name="deploy" depends="package">
+		<echo message="Deploying the JAR file" />
+		<delete>
+			<fileset dir="${deploy1}" includes="${ant.project.name}-*.jar" />
+		</delete>
+		<copy todir="${deploy1}">
+			<fileset dir="${dist}" includes="${ant.project.name}-${ver}.jar" />
+		</copy>
+	</target>
+</project>

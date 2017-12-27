@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="5 seconds">
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%-10.10t] %5p [%-30.30C{2}\(%-20.20M:%-5.5L\)] %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dailyFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/dev/workspace/workspace_common/pdf/logs/pdf.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>D:/dev/workspace/workspace_common/pdf/logs/pdf.log.%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- 단위 : KB, MB, GB (생략시 Byte) -->
+				<!-- <maxFileSize>100MB</maxFileSize> -->
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- 단위 : 개월 -->
+			<!-- <maxHistory>1</maxHistory> -->
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%-10.10t] %5p [%-30.30C{2}\(%-20.20M:%-5.5L\)] %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.apache.commons" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="dailyFile" />
+	</logger>
+
+	<logger name="org.springframework" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="dailyFile" />
+	</logger>
+
+	<logger name="net.sf.jasperreports" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="dailyFile" />
+	</logger>
+
+	<root level="DEBUG">
+		<appender-ref ref="console" />
+		<!-- <appender-ref ref="dailyFile" /> -->
+	</root>
+</configuration>
